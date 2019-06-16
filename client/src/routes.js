@@ -1,10 +1,13 @@
 
 // Require book model
-var Book = require("./Book");
+const Book = require("./Book");
+const API = require("./utils/google-api");
 
 // Routes
 // =============================================================
 module.exports = function(app) {
 
-  app.get('/');
+  app.get('/', (req, res) => {
+    return res.json({yo: "I'm words"});
+  });
 }
