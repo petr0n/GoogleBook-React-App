@@ -1,8 +1,7 @@
-var mongoose = require("mongoose");
+const mongoose = require("mongoose");
+const Schema = mongoose.Schema;
 
-var Schema = mongoose.Schema;
-
-var BookSchema = new Schema({
+const BookSchema = new Schema({
   title: {
     type: String,
     required: true
@@ -26,7 +25,7 @@ var BookSchema = new Schema({
 });
 
 // This creates our model from the above schema, using mongoose's model method
-var Book = mongoose.model("Book", BookSchema);
+const Book = mongoose.model("Book", BookSchema);
 
 // Export the Article model
 module.exports = Book;

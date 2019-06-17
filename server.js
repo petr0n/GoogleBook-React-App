@@ -15,13 +15,14 @@ if (process.env.NODE_ENV === "production") {
   require('dotenv'); 
 }
 
+// Define API routes here
+const routes = require("./routes");
+app.use(routes);
+
 
 // Connect to the Mongo DB
 mongoose.connect("mongodb://localhost/googlebooks");
 
-
-// Define API routes here
-require("./client/src/routes")(app);
 
 // Send every other request to the React app
 // Define any API routes before this runs
