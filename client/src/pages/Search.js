@@ -31,6 +31,9 @@ class Search extends Component {
   }
 
   createSearchResult = (books) => {
+    this.setState({
+      foundBooks: []
+    });
     let booksArr = [];
     let resultCount = books.length ? books.length : 10;
     if (books.length) {
@@ -53,7 +56,7 @@ class Search extends Component {
         }</SearchResultList>
       </div>
     )
-  }
+  } 
 }
 
 export default Search;

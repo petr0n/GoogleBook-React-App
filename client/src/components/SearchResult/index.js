@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import SaveButton from "../../components/SaveButton";
 import API from "../../utils/api";
+import './SearchResult.css';
 
 
 
@@ -11,6 +12,9 @@ class SearchResult extends Component {
     this.smallThumb = this.getThumbnail(this.bookInfo);
     this.authors = this.getAuthorsEl(this.bookInfo);
     this.authorsString = this.bookInfo.authors ? this.bookInfo.authors.map((author) => {return author}).join('') : [];
+    this.state = {
+      isSaved: false
+    };
   }
 
   getThumbnail = (book) => {
@@ -29,10 +33,11 @@ class SearchResult extends Component {
   }
 
   saveBook = (book) => {
+    this.setState(
+      prevState => ({ isSaved: !prevState.isSaved })
+    );
     API.saveBook(book);
-    return "money";
   }
-
   
   render() {
     const createBookSave = {
@@ -45,8 +50,10 @@ class SearchResult extends Component {
     const imgStyle = {
       width: "150px"
     }
+    const { isSaved } = this.state;
+    
     return (
-      <div className="border-b flex justify-between mb-10">
+      <div className={`search-item border-b flex justify-between mb-10 ${isSaved ? 'saved' : ''}`}>
         <figure className="p-2 flex-none" style={imgStyle}>
           <img src={this.smallThumb} alt={this.bookInfo.title} className="min-w-full" style={imgStyle} />
         </figure>

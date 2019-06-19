@@ -1,0 +1,9 @@
+.search-item {
+  transition: all 1s ease;
+}
+
+.search-item.saved {
+  opacity: 0;
+  visibility: hidden;
+  height: 0;
+}
