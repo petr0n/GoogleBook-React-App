@@ -7,6 +7,6 @@ body {
 
 header {
   background-image: url('images/header.jpg');
-  background-position: center;
+  background-position: 0 62px;
   background-size: cover;
 }

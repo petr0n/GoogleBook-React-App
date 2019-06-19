@@ -22,9 +22,9 @@ class Searchform extends Component {
 
   render() {
     return (
-      <form className="w-3/6 mx-auto" onSubmit={this.handleSearchSubmit}>
+      <form className="w-3/6 mb-10 mx-auto" onSubmit={this.handleSearchSubmit}>
         <input 
-          className="p-2 w-3/4 text-lg border mr-10"
+          className="p-2 w-3/4 text-lg border mr-10 border border-teal-500 rounded"
           placeholder="Search"
           id="search" 
           name="search" 

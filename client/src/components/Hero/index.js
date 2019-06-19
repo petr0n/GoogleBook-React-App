@@ -6,7 +6,7 @@ function Hero({ children }) {
     height: "250px"
   }
   return (
-    <header className="container mx-auto mb-2 flex items-end rounded-b-lg" style={heroStyle}>
+    <header className="container mx-auto mb-10 rounded-b-lg" style={heroStyle}>
       {children}
     </header>
   );

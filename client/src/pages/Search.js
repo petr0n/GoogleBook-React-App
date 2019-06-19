@@ -14,6 +14,7 @@ class Search extends Component {
 
   doSearch = (search) => {
     if (search) {
+      // this.setState({ foundBooks: [] });
       API.searchBooks(search, 1).then((books) => {
         console.log('books', books.length);
         if (books.length) {
@@ -22,7 +23,6 @@ class Search extends Component {
           });
         }
       });
-      console.log('this.state.foundBooks', this.state.foundBooks);
     }
   }
 
@@ -49,7 +49,7 @@ class Search extends Component {
         <SearchResultList>{
           this.state.foundBooks.length ? 
           this.state.foundBooks :
-          <p>No books found</p>
+          <p className="text-center">No books found</p>
         }</SearchResultList>
       </div>
     )
