@@ -51,7 +51,6 @@ class SearchResult extends Component {
       width: "150px"
     }
     const { isSaved } = this.state;
-    
     return (
       <div className={`search-item border-b flex justify-between mb-10 ${isSaved ? 'saved' : ''}`}>
         <figure className="p-2 flex-none" style={imgStyle}>
