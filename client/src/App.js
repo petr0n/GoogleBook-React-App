@@ -11,8 +11,8 @@ function App() {
   return (
     <div>
       <Router>
-        <Header />
         <div className="container mx-auto">
+          <Header />
           <Switch>
             <Route path="/" exact component={Search} />
             <Route path="/saved" component={Saved} />
